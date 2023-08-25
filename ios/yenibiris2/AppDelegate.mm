@@ -2,6 +2,7 @@
 #import "RelatedDigitalPushModule.h"
 #import <UserNotifications/UserNotifications.h>
 #import <React/RCTBundleURLProvider.h>
+#import <Firebase.h>
 
 @implementation AppDelegate
 
@@ -13,6 +14,7 @@
   self.initialProps = @{};
   UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
   center.delegate = self;
+  [FIRApp configure];
   [RelatedDigitalPushModule initRelatedDigital:@"organization_id" profileId:@"profile_id" dataSource:@"datasource" appAlias:@"app_alias" inAppNotificationsEnabled:true requestTimeoutSeconds:30 geofenceEnabled:true askLocationPermmissionAtStart:true maxGeofenceCount:20 isIDFAEnabled:true loggingEnabled:true];
 
   return [super application:application didFinishLaunchingWithOptions:launchOptions];
