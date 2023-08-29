@@ -63,4 +63,4 @@ yarn-error.log
 .metro-health-check*
 
 
-*GoogleService-Info.plist*
+/ios/GoogleService-Info.plist
